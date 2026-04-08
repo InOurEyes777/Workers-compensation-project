@@ -54,7 +54,7 @@ def analysis_and_model_page():
                 # 3. Бинарные признаки
                 data['Has_Dependents'] = (data['DependentChildren'] > 0).astype(int)
                 # Трансформация текста в векторы
-                tfidf = TfidfVectorizer(max_features=100)
+                tfidf = TfidfVectorizer(max_features=50)
                 tfidf_matrix = tfidf.fit_transform(data['ClaimDescription'])
                 tfidf_df = pd.DataFrame(tfidf_matrix.toarray(), columns=tfidf.get_feature_names_out())
                 data = pd.concat([data, tfidf_df], axis=1)
@@ -96,7 +96,7 @@ def analysis_and_model_page():
                 lin_reg.fit(X_train, y_train)
                 st.session_state['model_lin'] = lin_reg
 
-                rf_reg = RandomForestRegressor(n_estimators=100, random_state=42)
+                rf_reg = RandomForestRegressor(n_estimators=50, random_state=42)
                 rf_reg.fit(X_train, y_train)
                 st.session_state['model_rf'] = rf_reg
 
