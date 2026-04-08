@@ -36,10 +36,10 @@
 
 ### **2\. Перейдите в директорию проекта:**
 
-cd Workers-compensation-project
+&#x09;cd Workers-compensation-project
 
 ### **3\. Установите зависимсоти:**
-	&#x09;pip install -r requirements.txt
+&#x09;pip install -r requirements.txt
 
 4\. Запустите приложение:
 
